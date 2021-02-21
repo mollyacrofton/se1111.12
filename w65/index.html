@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Molly crofton">
+    <meta name="description" content="Week 6 JS Intro">
+    
+    <title>Week 6 | JS Calculator</title>
+
+</head>
+<body>
+    
+    <!--we should have some sort of HTML in the file-->
+    <h1>Pay Calculator - Javascript</h1>
+    <h2>Molly Crofton</h2>
+    <h3>2-20-2021</h3>
+
+    <!--IN-DOCUMENT JAVASCRIPT-->
+    <!--in-document: lives within the .html (you saw this with CSS)-->
+    <script>
+        //everything inside of the script tags MUST be written in JAVASCRIPT!
+        
+        //creating a variable -- keyword "var"
+      
+    
+
+        //cannot use num1 or num2 in a process unless they have been DEFINED (value stored to them)
+
+        //alert() allows for a pop-up in the browser page to display data
+        //alert() --> print() / OUTPUT
+        // ``denotes a literal string --> works similar to .format() in Python -- hold var names inside of ${VAR
+
+        // escape sequences also work in Javascript --> \n (inside of strings!)
+
+
+        
+        
+
+
+        //store the value form prompt()
+        var hourly_pay = prompt("Enter hourly pay: ")
+        
+        hourly_pay = Number(hourly_pay)
+        
+        alert(`Your hourly pay is: $${hourly_pay}`)
+
+
+        
+
+
+       
+        var hours_worked = prompt("Enter hours worked: ")
+        
+        hours_worked= Number(hours_worked)
+
+        alert(`You worked : ${hours_worked} hours`) 
+
+
+       
+
+        var tax = prompt("Enter tax: ")
+        
+        tax = Number(tax)
+
+        alert(` The tax is:  ${tax}%`)
+
+        var tax_percent = tax/100
+
+
+      
+       
+        var gross_pay = hourly_pay * hours_worked
+
+        var tax_taken = gross_pay * tax_percent
+
+        var net_pay = gross_pay - tax_taken
+        
+
+       
+        
+        console.log (`Worked: Hour ${hours_worked.toFixed(2)}`)
+
+        console.log (`Hourly Pay: ${hourly_pay.toFixed(2)}`)
+        
+        console.log(`Gross Pay: $${gross_pay.toFixed(2)}`)
+
+        alert(` Hours worked ${hours_worked} The hourly pay is: ${hourly_pay.toFixed(2)} The gross pay is: ${gross_pay.toFixed(2)} Tax taken: ${tax_taken.toFixed(2)} `)
+
+        
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
