@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 | Homework Assignment</title>
+</head>
+<body>
+
+    <h1>List Of People</h1>
+	<p>
+		Please fill in the form with your information.
+	</p>
+	<div>
+		<table>
+			<tr>
+
+				<!--First Name--> 
+
+				<td><label for="first">First Name</label></td>
+				<td><input id="first" type="text" name="first" placeholder="First Name"></td>
+			</tr>
+			<tr>
+				
+				<!--Last Name-->
+
+				<td><label for="last">Last Name</label></td>
+				<td><input id="last" type="text" name="last" placeholder="Last Name"></td>
+			</tr>
+			<tr>
+
+				<td></td>
+
+				<!-- Submit Button-->
+
+				<td><input id="button" type="button" value="submit"></td>
+			</tr>
+		</table>
+	<div>
+
+				<!-- Displays Information On page-->
+
+	<div id="output">
+	
+	</div>
+	<hr>
+
+	
+	
+
+
+	<script>
+
+
+
+		var firstName = document.querySelector (`#first`)
+		console.log(firstName)
+
+
+		var LastName = document.querySelector (`#last`)
+		console.log(LastName)
+
+
+		var outputdiv =document.querySelector(`#output`)
+		console.log(output)
+
+		//pageTitle.innerHTML +=`Hello World `
+
+		//pageTitle += `<h4> Hello World <h4>`
+
+	
+
+
+	 //--JavaScript cannot find tags, if they are not parsed before the script runs-->
+   
+
+	
+		
+		
+
+
+		//Make an array to store the people
+		
+		
+		var people = []
+		
+		
+
+
+		//Make the button clickable. When clicked it calls the calcAndDisplay function.
+
+		document.querySelector(`#button`).addEventListener (`click`,calcAndDisplay)
+
+
+
+
+		
+		
+		/*-----------------------------------------------------
+		Will add objects into the people array. 
+		Then will bubble sort the array and print each person to the screen.
+		The output should resemble: 
+			FIRST: Cersei
+			LAST: Lannister
+			_________________________
+			FIRST: Arya
+			LAST: Stark
+			_________________________
+			FIRST: Daenerys
+			LAST: Targaryen
+			_________________________
+		--------------------------------------------------------*/
+
+		
+
+		function calcAndDisplay(e)
+		{
+			//Create an object called person.
+
+			//Add the following properties:
+			    //1. first: will be a string that uses the first Input's value
+			
+				//2. last: will be a string that uses the last Input's value
+
+            var person = { 
+				first: firstName.value,
+				last: LastName.value
+				
+			}//end of person object
+
+
+
+
+			//Add the person object into the people array by using the .push() array method.
+
+
+			people.push(person)
+
+			
+
+			
+
+			//Bubble sort people on the last name
+			for(let i=0; i < people.length-1; i++)
+			{
+				for(let j=0; j < people.length-1; j++)
+				{
+					if(people[j].last > people[j+1].last)
+					{
+						let temp = people[j]
+						people[j] = people[j+1]
+						people[j+1] = temp
+					}
+				}
+			}//end of bubble sort algorithm!
+
+			//console.log the people array to check that the people array is formatted correctly and is populated with the correct objects
+			
+			console.log(people)
+			//create a variable called 'output' that has an empty string value stored to 
+			var output =``
+			output +=`<p>`
+			//Loop through the objects in the people array
+			for(let i = 0;i <people.length; i++ )
+            {
+
+				//Loop through each property in the object
+				for(key in people[i])
+                {
+					//The output should use the key set to uppercase using the .toUpperCase() String method as a title and the value of the key.
+					//Output will resemble:
+					//FIRST: Ivan
+					//LAST: Drago
+					output += `<b> ${key.toUpperCase() }: </b> ${people[i][key]}  &nbsp;&nbsp;&nbsp;`
+
+                }
+                //add a <hr> to the output at the end of this outter loop so a horizontal rule is displayed inbetween each person being displayed to the screen.
+				
+				output+= `</p> <hr>`
+
+
+
+			}//end of loop going through people array to edit 'output'
+
+			 outputdiv.innerHTML = output
+
+				
+		
+		
+				
+
+		}
+	
+    </script>
+    
+</body>
+</html>
