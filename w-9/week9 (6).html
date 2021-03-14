@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Week 2 Files</title>
+<style type="text/css">
+	.border{border:1px solid black;}
+</style>
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+	//Use this Array of objects to complete the assignment.
+	var people =[
+		{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
+		{first:"Freddy", last:"Krueger", credit:"A Nightmare on Elm Street" },
+		{first:"Roger", last:"Rabbit", credit:"Who Framed Roger Rabbit" },
+		{first:"Kevin", last:"McCallister", credit:"Home Alone" },
+		{first:"Godzilla", last:"King of The Monsters", credit:"Godzilla" },
+		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
+		{first:"Marion", last:"Cobretti", credit:"Cobra" }
+	]
+
+	var body = document.querySelector (`body`)
+
+	console.log(body)
+	consol.dir(body) 
+
+	document.createElement(`tempDiv`) 
+
+	div.setAttribute(`id`,`tempDiv`)
+
+	body.appendChild(tempDiv)
+
+	for(let i=0; i < people.length-1; i++)
+
+
+			document.createElement(`tempDiv`) 	
+
+			div.setAttribute(`id`,`tempDiv`)
+
+			tempDiv.setAttribute(`id `,String(i))
+
+
+
+			{
+				for(let j=0; j < people.length-1; j++)
+				{
+					if(people[j].last > people[j+1].last)
+					{
+						let temp = people[j]
+						people[j] = people[j+1]
+						people[j+1] = temp
+					}
+				}
+			}//end of bubble sort algorithm!
+
+			//console.log the people array to check that the people array is formatted correctly and is populated with the correct objects
+			
+			console.log(people)
+			//create a variable called 'output' that has an empty string value stored to 
+			var output =``
+			output +=`<p>`
+			//Loop through the objects in the people array
+			for(let i = 0;i <people.length; i++ )
+            {
+
+				//Loop through each property in the object
+				for(key in people[i])
+                {
+					//The output should use the key set to uppercase using the .toUpperCase() String method as a title and the value of the key.
+					//Output will resemble:
+					//FIRST: Ivan
+					//LAST: Drago
+					output += `<b> ${key.toUpperCase() }: </b> ${people[i][key]}  &nbsp;&nbsp;&nbsp;`
+
+                }
+                //add a <hr> to the output at the end of this outter loop so a horizontal rule is displayed inbetween each person being displayed to the screen.
+				
+				output+= `</p> <hr>`
+
+
+
+			}//end of loop going through people array to edit 'output'
+
+			 outputdiv.innerHTML = output
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
